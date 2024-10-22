@@ -2,9 +2,12 @@ package co.edu.uco.ucobet.generales.domain.city;
 
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+
 import co.edu.uco.ucobet.generales.domain.Domain;
 import co.edu.uco.ucobet.generales.domain.state.StateDomain;
 
+@Service // Se agrega este service
 public final class CityDomain extends Domain {
 	
 	private String name;
