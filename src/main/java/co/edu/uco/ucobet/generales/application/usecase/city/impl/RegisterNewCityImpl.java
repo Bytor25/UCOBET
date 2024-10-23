@@ -24,6 +24,8 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 		
 		// Validar reglas de negocio
 		
+		newCityValidator.validate(data);
+		
 		// Mapper de Domain a entity
 		CityEntity cityEntity = CityEntity.create();
 		

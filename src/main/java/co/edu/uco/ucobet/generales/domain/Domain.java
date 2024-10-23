@@ -19,5 +19,4 @@ public class Domain {
 		this.id = id;
 	}
 	
-	
 }

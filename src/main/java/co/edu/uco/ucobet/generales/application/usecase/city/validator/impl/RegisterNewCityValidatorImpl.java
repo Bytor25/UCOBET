@@ -28,18 +28,6 @@ public final class RegisterNewCityValidatorImpl implements RegisterNewCityValida
 	@Autowired 
 	private CityStateIsValidRule cityStateIsValidRule;
 	
-	public RegisterNewCityValidatorImpl( CityIdDoesNotExistRule cityIdDoesNotExistRule, 
-			CityIdFormatIsValidRule cityIdFormatIsValidRule, CityIdIsNotEmptyRule cityIdIsNotEmptyRule, 
-			CityNameIsUniqueForStateRule cityNameIsUniqueForStateRule, CityStateIsValidRule cityStateIsValidRule ) {
-		
-		this.cityIdDoesNotExistRule = cityIdDoesNotExistRule;
-		this.cityIdFormatIsValidRule = cityIdFormatIsValidRule;
-		this.cityIdIsNotEmptyRule = cityIdIsNotEmptyRule;
-		this.cityNameIsUniqueForStateRule = cityNameIsUniqueForStateRule;
-		this.cityStateIsValidRule = cityStateIsValidRule;
-		
-	}
-	
 
 	@Override
 	public void validate(final CityDomain data) {

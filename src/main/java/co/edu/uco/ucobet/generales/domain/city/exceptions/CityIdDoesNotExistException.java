@@ -10,6 +10,7 @@ public final  class CityIdDoesNotExistException extends RuleUcobetException {
 		super(technicalMessage, userMessager, rootException);
 	}
 	
+	
 	public static final CityIdDoesNotExistException create() {
 		var userMessage = "No existe la ciudad con el identificador indicado...";
 		return new CityIdDoesNotExistException(userMessage, userMessage, new Exception());

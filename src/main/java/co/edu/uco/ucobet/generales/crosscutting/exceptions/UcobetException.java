@@ -59,7 +59,7 @@ public class UcobetException extends RuntimeException {
 		return layer;
 	}
 
-	private final void setLayer(Layer layer) {
+	private final void setLayer(final Layer layer) {
 		this.layer = ObjectHelper.getDefault(layer, Layer.GENERAL);
 	}
 	

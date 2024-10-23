@@ -5,8 +5,6 @@ import java.util.UUID;
 import co.edu.uco.ucobet.generales.crosscutting.helpers.TextHelper;
 import co.edu.uco.ucobet.generales.crosscutting.helpers.UUIDHelper;
 
-
-
 public final class RegisterNewCityDto {
 	
 	private String name;
@@ -33,7 +31,7 @@ public final class RegisterNewCityDto {
 	}
 
 	public final void setName(final String name) {
-		this.name = TextHelper.getDefault(name, TextHelper.EMPTY);
+		this.name = TextHelper.applyTrim(name);
 	}
 
 	public final UUID getState() {

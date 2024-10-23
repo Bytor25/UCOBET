@@ -5,16 +5,16 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import co.edu.uco.ucobet.generales.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.ucobet.generales.domain.city.exceptions.CityIdFormatIsNotValidException;
-import co.edu.uco.ucobet.generales.domain.city.rules.CityIdFormatIsValidRule;
+import co.edu.uco.ucobet.generales.domain.city.exceptions.CityIdIsEmptyException;
+import co.edu.uco.ucobet.generales.domain.city.rules.CityIdIsNotEmptyRule;
 
 @Service
-public final class CityIdFormatIsValidRuleImpl implements CityIdFormatIsValidRule{
+public final class CityIdIsNotEmptyRuleImpl implements CityIdIsNotEmptyRule{
 
 	@Override
 	public void execute(final UUID data) {
 		if(UUIDHelper.isDefault(data)) {
-			throw CityIdFormatIsNotValidException.create();
+			throw CityIdIsEmptyException.create();
 		}
 		
 	}

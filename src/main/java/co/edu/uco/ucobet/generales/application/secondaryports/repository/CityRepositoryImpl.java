@@ -2,11 +2,13 @@ package co.edu.uco.ucobet.generales.application.secondaryports.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
 import co.edu.uco.ucobet.generales.application.secondaryports.entity.CityEntity;
 import co.edu.uco.ucobet.generales.crosscutting.exceptions.DataUcobetException;
+import co.edu.uco.ucobet.generales.crosscutting.exceptions.RepositoryUcobetException;
 import co.edu.uco.ucobet.generales.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.ucobet.generales.crosscutting.helpers.TextHelper;
 import co.edu.uco.ucobet.generales.crosscutting.helpers.UUIDHelper;
@@ -55,5 +57,27 @@ public class CityRepositoryImpl implements CityRepositoryCustom{
 		}
 	
 	}
+	
+	@Override
+	public boolean isCityBeingUsed(UUID cityId) {
+		try {
+			var criteriaBuilder = entityManager.getCriteriaBuilder();
+			var query = criteriaBuilder.createQuery(Long.class);
+			var root = query.from(CityEntity.class);
+
+			query.select(criteriaBuilder.count(root)).where(criteriaBuilder.equal(root.get("id"), cityId));
+
+			Long count = entityManager.createQuery(query).getSingleResult();
+
+			return count > 0;
+
+		} catch (final Exception exception) {
+			throw RepositoryUcobetException.create("Error al verificar si la ciudad está siendo utilizada", null,
+					exception);
+		}
+		
+	}
+	
+	
 
 }

@@ -27,7 +27,7 @@ public class RegisterNewCityController {
 	
 	@PostMapping
 	public RegisterNewCityDto getDummy(@RequestBody RegisterNewCityDto data) {
-		//registerNewCityInteractor.execute(data);
+		registerNewCityinteractor.execute(data);
 		return data;
 	}
 }

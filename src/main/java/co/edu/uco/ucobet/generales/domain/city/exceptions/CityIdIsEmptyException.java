@@ -12,7 +12,7 @@ public class CityIdIsEmptyException extends RuleUcobetException {
 	}
 
 	public static final CityIdIsEmptyException create() {
-		var userMessage = "La Ciudad tiene un identificador vacio...";
+		var userMessage = " ";
 		return new CityIdIsEmptyException(userMessage, userMessage, new Exception());
 	}
 }

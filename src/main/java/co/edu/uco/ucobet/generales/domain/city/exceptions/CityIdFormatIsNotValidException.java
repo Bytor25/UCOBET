@@ -12,7 +12,7 @@ public class CityIdFormatIsNotValidException extends RuleUcobetException {
 	}
 
 	public static final CityIdFormatIsNotValidException create() {
-		var userMessage = "La Ciudad tiene un identificador con formato no válido correspondiente...";
+		var userMessage = "";
 		return new CityIdFormatIsNotValidException(userMessage, userMessage, new Exception());
 	}
 }
